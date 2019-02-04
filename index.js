@@ -3,8 +3,10 @@ const cors = require('cors')
 const app = express()
 const port = 2000
 
+//CORS 
 app.use(cors());
 
+// GET CONTEUDOS
   function getConteudos(){
   return Conteudos.findAll({
     attributes : ['id', 'img', 'tituloBloco', 'texto', 'link', 'alt']
@@ -16,9 +18,10 @@ app.get('/conteudos',function(req, res, next){
     getConteudos()
       .then((d) => res.send(d))
 })
+// END OF GET CONTEUDOS
 
 
-
+// Sequelize Configuratins //
 const Sequelize = require('sequelize')
 const sequelize = new Sequelize('tcc','root','',{
   host:'localhost',
@@ -77,6 +80,7 @@ const Conteudos = sequelize.define('conteudos', {
   }
 })
 
+// End of Sequelize Configuratins //
 
 
 
