@@ -1,0 +1,10 @@
+version: '2'
+services:
+  server:
+    build: .
+    command: node index.js
+    volumes:
+      - .:/src/docker
+      - /src/node_modules
+    ports:
+      - "2001:2000"
