@@ -4,7 +4,7 @@ services:
     build: .
     command: node index.js
     volumes:
-      - .:/src/docker
+      - .:/src/
       - /src/node_modules
     ports:
-      - "2001:2000"
+      - "2000:2000"
